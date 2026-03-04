@@ -1,0 +1,48 @@
+# ============================================================
+# Agentic AI System — Dependency Guide
+# ============================================================
+#
+# CORE SYSTEM: Zero external dependencies.
+# Uses Python stdlib only: http.server, sqlite3, urllib,
+# subprocess, threading, json, ast, hashlib, argparse.
+#
+# Run immediately with no pip install:
+#   python main.py --ui
+#   python main.py --goal "Build a CLI calculator"
+#
+# ============================================================
+# LLM PROVIDER OPTIONS (set in configs/config.json)
+# ============================================================
+#
+# OPTION 1 — Anthropic API (default, zero pip deps)
+#   Set env var: ANTHROPIC_API_KEY=your_key
+#   Config:      "provider": "anthropic"
+#   No install needed — uses stdlib urllib.
+#
+# OPTION 2 — Ollama (local models, zero pip deps)
+#   Install Ollama app: https://ollama.com
+#   Pull a model:       ollama pull llama3
+#   Config:             "provider": "ollama"
+#   No pip install needed — uses stdlib urllib to hit localhost:11434.
+#
+# OPTION 3 — HuggingFace Transformers (local, fully offline)
+#   Config: "provider": "huggingface"
+#   Install the packages below:
+#
+# pip install transformers torch accelerate sentencepiece
+#
+# Recommended models (set in configs/config.json):
+#   TinyLlama/TinyLlama-1.1B-Chat-v1.0  (~600MB, 4GB RAM)
+#   microsoft/phi-2                       (~1.5GB, 4GB RAM)
+#   mistralai/Mistral-7B-Instruct-v0.2   (~14GB,  16GB RAM)
+#
+# Models auto-download to models/cache/ on first use.
+#
+# ============================================================
+# OPTIONAL: HuggingFace backend only
+# ============================================================
+# Uncomment to install:
+# transformers==4.41.2
+# torch==2.3.0
+# accelerate==0.30.1
+# sentencepiece==0.2.0
