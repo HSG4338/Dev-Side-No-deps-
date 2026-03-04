@@ -1,0 +1,7 @@
+/* Agentic AI — supplemental static styles */
+:root{--bg:#0B0B0B;--panel2:#2B2B2B;--border:#333;--text:#E0E0E0;--dim:#888;--ok:#4CAF50;--fail:#CF6679;--accent:#5B8DEF}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+code,pre{background:#111;border:1px solid var(--border);border-radius:3px;font-family:inherit;font-size:12px;padding:2px 6px}
+pre{padding:12px;overflow-x:auto}
+.text-ok{color:var(--ok)}.text-fail{color:var(--fail)}.text-accent{color:var(--accent)}.text-dim{color:var(--dim)}
+.hidden{display:none!important}

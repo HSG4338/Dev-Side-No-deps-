@@ -1,0 +1,4 @@
+2026-03-04 08:37:05,798 [INFO] [plan_start] {'goal': 'hello'}
+2026-03-04 08:37:05,834 [INFO] [plan_complete] {'tasks': 3}
+2026-03-04 08:49:08,615 [INFO] [plan_start] {'goal': 'add 5 to 5'}
+2026-03-04 08:49:08,636 [INFO] [plan_complete] {'tasks': 3}

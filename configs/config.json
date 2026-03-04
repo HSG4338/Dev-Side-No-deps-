@@ -1,0 +1,78 @@
+{
+  "system": {
+    "max_retries": 3,
+    "max_iterations": 10,
+    "log_dir": "logs",
+    "workspace_dir": "workspace",
+    "memory_db": "memory/memory.db"
+  },
+  "llm": {
+    "provider": "huggingface",
+    "anthropic": {
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "model": "claude-haiku-4-5-20251001",
+      "max_tokens": 1024,
+      "temperature": 0.3,
+      "timeout": 60
+    },
+    "ollama": {
+      "host": "http://localhost:11434",
+      "model": "llama3",
+      "temperature": 0.3,
+      "timeout": 120,
+      "options": {
+        "num_predict": 1024,
+        "num_ctx": 4096
+      }
+    },
+    "huggingface": {
+      "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "cache_dir": "models/cache",
+      "max_new_tokens": 512,
+      "temperature": 0.3,
+      "device": "cpu",
+      "load_in_8bit": false
+    }
+  },
+  "agents": {
+    "planner": {
+      "name": "PlannerAgent"
+    },
+    "developer": {
+      "name": "DeveloperAgent",
+      "allowed_paths": [
+        "workspace"
+      ]
+    },
+    "reviewer": {
+      "name": "ReviewerAgent",
+      "strict_mode": true
+    },
+    "qa": {
+      "name": "QAAgent",
+      "timeout": 30
+    },
+    "repo_manager": {
+      "name": "RepoManagerAgent",
+      "forbidden_paths": [
+        "models",
+        "memory",
+        "logs",
+        "configs",
+        "agents",
+        "orchestrator",
+        "ui"
+      ]
+    }
+  },
+  "github": {
+    "enabled": false,
+    "token_env": "GITHUB_TOKEN",
+    "username_env": "GITHUB_USERNAME",
+    "repo_name": "agentic-ai-system"
+  },
+  "ui": {
+    "host": "127.0.0.1",
+    "port": 5000
+  }
+}
